@@ -23,27 +23,29 @@
     </header>
 
     <main>
-      <section id="secao-formulario">
-        <div>
+      <section id="secao-formulario" class="container-formulario">
+        <div class="card-formulario">
             <form action="" name="EnderecoNovo">
-                <div>
+                <div class="formulario-contato">
                     <label for="cep">Cep:</label>
-                    <input name="cep" id="cep" type="text" placeholder="CEP" />
+                    <input class="input-formulario" name="cep" id="cep" type="text" placeholder="CEP" />
+                    <div class="mensagem-erro">Campo Requerido</div>
                 </div>
 
-                <div>
+                <div class="formulario-contato">
                     <label for="logradouro">Logradouro:</label>
-                    <input name="logradouro" id="logradouro" type="text" placeholder="Logradouro" />
+                    <input class="input-formulario" name="logradouro" id="logradouro" type="text" placeholder="Logradouro" disabled />
                 </div>
 
-                <div>
+                <div class="formulario-contato">
                     <label for="numero">Número:</label>
-                    <input name="numero" id="numero" type="text" placeholder="Número" />
+                    <input class="input-formulario" name="numero" id="numero" type="text" placeholder="Número" />
+                    <div class="mensagem-erro">Campo Requerido</div>
                 </div>
 
-                <div>
+                <div class="formulario-contato">
                     <label for="cidade">Cidade:</label>
-                    <input name="cidade" id="cidade" type="text" placeholder="Cidade" />
+                    <input class="input-formulario" name="cidade" id="cidade" type="text" placeholder="Cidade" disabled/>
                 </div>
 
                 <div>
