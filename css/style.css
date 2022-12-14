@@ -48,7 +48,7 @@ html, body {
 .card-formulario {
     max-width: 600px;
     width: 100%;
-    background-color: #999999;
+    background-color: #444;
     margin: 0 auto;
     border-radius: 10px;
     padding: 20px;
@@ -83,4 +83,32 @@ html, body {
 
 .input-formulario:disabled {
         background-color: #ddd;
+}
+
+.container-botao {
+    display: flex;
+    justify-content: space-between;
+}
+
+.botao {
+    height: 50px;
+    width: 250px;
+    border-radius: 5px;
+    border: 0;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.botao:hover {
+    zoom: 1.15;
+}
+
+.botao-esqueda {
+    margin-right: 10px;
+}
+
+.botao-direita {
+    margin-left: 10px;
 }
