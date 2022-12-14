@@ -4,3 +4,38 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif, Arial, Helvetica;
 }
+
+html, body {
+    background-color: black;
+}
+
+.nav-superior {
+    height: 80px;
+    width: 100%;
+    background-color: blue;
+    padding: 0 20px;
+    display:flex;
+    align-items: center;
+}
+
+.nav-principal {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+
+}
+
+.link-contato {
+    color: white;
+    cursor: pointer;
+    font-size: 28px;
+
+}
+
+.nav-principal h1 {
+    color: white;
+    font-size: 38px;
+}
