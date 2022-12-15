@@ -45,9 +45,22 @@ export function init() {
 
    // console.log(state);
 
-   setErroFormulario("cep", "testando mensagem de erro do campo cep");
-   setErroFormulario("numero", "testando mesagem de erro do campo numero");
+   //setErroFormulario("cep", "testando mensagem de erro do campo cep");
+   //setErroFormulario("numero", "testando mesagem de erro do campo numero");
+   state.inputNumero.addEventListener('change', handleInputNumeroChange);
 
+
+}
+
+function handleInputNumeroChange(evento) {
+    //se o conteúdo do campo estiver string vazia colocar a mensagem de erro de campo requerido
+    if(evento.target.value == "") {
+        setErroFormulario("numero","Campo requerido");
+    } 
+    else {
+    //se o campo estiver preenchido não faz nada
+        setErroFormulario("numero","")
+    }
 
 }
 
