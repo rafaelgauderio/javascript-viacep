@@ -1,5 +1,6 @@
 // controladores em MCV são os módulos, componentes que tratam os eventos do usuário
 
+import * as requisicaoServico from '../services/servico-requisicao.js'
 import Endereco from '../models/endereco.js';
 
 //função construtora
@@ -49,6 +50,9 @@ export function init() {
    //setErroFormulario("numero", "testando mesagem de erro do campo numero");
    state.inputNumero.addEventListener('change', handleInputNumeroChange);
    state.botaoLimpar.addEventListener('click',handleBotaoLimparClick);
+   state.botaoSalvar.addEventListener('click',handleBotaoSalvarClick);
+
+   //requisicaoServico.getJson('https://viacep.com.br/ws/90245000/json/');
 
 }
 
@@ -82,6 +86,12 @@ function handleBotaoLimparClick(evento) {
     // para evitar que o formulario seja enviado e chame outra pagina
     evento.preventDefault();
     limparFormulario();
+}
+
+async function handleBotaoSalvarClick(evento) {
+    evento.preventDefault();
+    const resultado = await requisicaoServico.getJson('https://viacep.com.br/ws/90245000/json/');
+    console.log(resultado);
 }
 
 function setErroFormulario (chave, valor) {
