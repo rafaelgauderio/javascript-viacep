@@ -7,12 +7,13 @@
 
 html, body {
     background-color: black;
+    border: 0;
 }
 
 .nav-superior {
     height: 80px;
     width: 100%;
-    background-color: blue;
+    background-color: green;
     padding: 0 20px;
     display:flex;
     align-items: center;
@@ -65,7 +66,7 @@ html, body {
 
 .mensagem-erro {
     margin-top: 8px;
-    color: #ff0020;
+    color: #ff6961;
 }
 
 .input-formulario {
@@ -74,7 +75,7 @@ html, body {
     border-radius: 5px;
     padding: 0 20px;
     font-size: 16px;
-    border: 0;
+    border: 1.5px solid black;
 }
 
 .input-formulario::placeholder {
@@ -95,7 +96,7 @@ html, body {
     width: 250px;
     border-radius: 5px;
     border: 0;
-    background-color: blue;
+    background-color: green;
     color: white;
     font-weight: bold;
     font-size: 15px;
@@ -135,7 +136,7 @@ html, body {
 }
 
 .card-item-lista h4 {
-    color:blue;
+    color:green;
     font-weight: 700;
     font-size: 20px;
 
