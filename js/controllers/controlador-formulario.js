@@ -3,13 +3,14 @@
 
 //função construtora
 function State () {
+    
     this.botaoSalvar = null;
     this.botaoLimpar = null;
 
     this.inputCep= null;
     this.inputLogradouro = null;
     this.inputNumero = null;
-    this.inputCity = null;
+    this.inputCidade = null;
 
     this.erroCep = null;
     this.erroNumbero = null;
