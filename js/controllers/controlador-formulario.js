@@ -13,7 +13,7 @@ function State () {
     this.inputCidade = null;
 
     this.erroCep = null;
-    this.erroNumbero = null;
+    this.erroNumero = null;
 }
 
 // instanciando um objeto State
@@ -34,7 +34,7 @@ export function init() {
 
     //botoes
     state.botaoSalvar = document.forms.enderecoNovo.botaoSalvar;
-    state.botaoSalvar = document.forms.enderecoNovo.botaoLimpar;
+    state.botaoLimpar = document.forms.enderecoNovo.botaoLimpar;
 
     //erros
     state.erroCep = document.querySelector('[data-erro="cep"]');
