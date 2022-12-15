@@ -1,5 +1,6 @@
 // controladores em MCV são os módulos, componentes que tratam os eventos do usuário
 
+import Endereco from '../models/endereco.js';
 
 //função construtora
 function State () {
@@ -14,6 +15,8 @@ function State () {
 
     this.erroCep = null;
     this.erroNumero = null;
+
+    this.endereco = new Endereco ();
 }
 
 // instanciando um objeto State
