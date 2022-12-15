@@ -48,7 +48,7 @@ export function init() {
    //setErroFormulario("cep", "testando mensagem de erro do campo cep");
    //setErroFormulario("numero", "testando mesagem de erro do campo numero");
    state.inputNumero.addEventListener('change', handleInputNumeroChange);
-
+   state.botaoLimpar.addEventListener('click',handleBotaoLimparClick);
 
 }
 
@@ -62,6 +62,26 @@ function handleInputNumeroChange(evento) {
         setErroFormulario("numero","")
     }
 
+}
+
+function limparFormulario () {
+    state.inputCep.value = "";
+    state.inputLogradouro.value = "";
+    state.inputNumero.value = "";
+    state.inputCidade.value = "";
+
+    setErroFormulario("cep","");
+    setErroFormulario("numero","");
+
+    //jogar o cursos para o campo cep
+    state.inputCep.focus();
+
+}
+
+function handleBotaoLimparClick(evento) {
+    // para evitar que o formulario seja enviado e chame outra pagina
+    evento.preventDefault();
+    limparFormulario();
 }
 
 function setErroFormulario (chave, valor) {
