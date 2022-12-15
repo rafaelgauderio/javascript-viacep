@@ -43,7 +43,18 @@ export function init() {
     state.erroCep = document.querySelector('[data-erro="cep"]');
     state.erroNumero = document.querySelector('[data-erro="numero"]');
 
-    console.log(state);
+   // console.log(state);
+
+   setErroFormulario("cep", "testando mensagem de erro do campo cep");
+   setErroFormulario("numero", "testando mesagem de erro do campo numero");
 
 
+}
+
+function setErroFormulario (chave, valor) {
+    //verifica se o armento passado como chave é um cep ou um numero
+    const elemento = document.querySelector(`[data-erro=${chave}]`);
+    // cria o elemento de campo requerido no campo em branco
+    elemento.innerHTML = valor;
+    
 }
