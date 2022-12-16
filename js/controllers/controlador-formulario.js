@@ -1,6 +1,7 @@
 // controladores em MCV são os módulos, componentes que tratam os eventos do usuário
 
-import * as requisicaoServico from '../services/servico-requisicao.js'
+//import * as requisicaoServico from '../services/servico-requisicao.js'
+import * as servicoEndereco from '../services/servico-endereco.js'
 import Endereco from '../models/endereco.js';
 
 //função construtora
@@ -51,6 +52,7 @@ export function init() {
    state.inputNumero.addEventListener('change', handleInputNumeroChange);
    state.botaoLimpar.addEventListener('click',handleBotaoLimparClick);
    state.botaoSalvar.addEventListener('click',handleBotaoSalvarClick);
+   state.inputCep.addEventListener('change', handleInputCepChange);
 
    //requisicaoServico.getJson('https://viacep.com.br/ws/90245000/json/');
 
@@ -90,8 +92,19 @@ function handleBotaoLimparClick(evento) {
 
 async function handleBotaoSalvarClick(evento) {
     evento.preventDefault();
-    const resultado = await requisicaoServico.getJson('https://viacep.com.br/ws/90245000/json/');
-    console.log(resultado);
+    //const resultado = await requisicaoServico.getJson('https://viacep.com.br/ws/90245000/json/');
+    //console.log(resultado);
+    console.log(evento.target);
+}
+
+async function handleInputCepChange (evento) {
+    const cep = evento.target.value;
+    // fazer a requisição quando houver modificação no input do cep
+    // modificado await só pode ser usado em função assincrona
+    const endereco = await servicoEndereco.buscaPorCep(cep);
+   console.log(endereco);
+   // console.log("mudou");
+
 }
 
 function setErroFormulario (chave, valor) {
