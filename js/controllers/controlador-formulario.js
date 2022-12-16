@@ -1,8 +1,10 @@
 // controladores em MCV são os módulos, componentes que tratam os eventos do usuário
 
 //import * as requisicaoServico from '../services/servico-requisicao.js'
+import * as controladorLista from './controlador-lista.js'; 
 import * as servicoEndereco from '../services/servico-endereco.js'
 import Endereco from '../models/endereco.js';
+
 
 //função construtora
 function State() {
@@ -59,7 +61,7 @@ export function init() {
 function handleInputNumeroKeyup (evento) {
     // vai armazenar o valor digitado do objeto endereço do tipo Endereço 
     // quando for digitado no campo numero
-    state.endereco.number = evento.target.value;
+    state.endereco.numero = evento.target.value;
 
 }
 
@@ -100,6 +102,8 @@ async function handleBotaoSalvarClick(evento) {
     //const resultado = await requisicaoServico.getJson('https://viacep.com.br/ws/90245000/json/');
     //console.log(resultado);
     console.log(state.endereco);
+    controladorLista.adicionarCardnoHtml(state.endereco);
+
 }
 
 async function handleInputCepChange(evento) {
