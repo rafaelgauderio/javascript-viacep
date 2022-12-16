@@ -47,11 +47,19 @@ export function init() {
     //setErroFormulario("cep", "testando mensagem de erro do campo cep");
     //setErroFormulario("numero", "testando mesagem de erro do campo numero");
     state.inputNumero.addEventListener('change', handleInputNumeroChange);
+    state.inputNumero.addEventListener('keyup',handleInputNumeroKeyup);
     state.botaoLimpar.addEventListener('click', handleBotaoLimparClick);
     state.botaoSalvar.addEventListener('click', handleBotaoSalvarClick);
     state.inputCep.addEventListener('change', handleInputCepChange);
 
     //requisicaoServico.getJson('https://viacep.com.br/ws/90245000/json/');
+
+}
+
+function handleInputNumeroKeyup (evento) {
+    // vai armazenar o valor digitado do objeto endereço do tipo Endereço 
+    // quando for digitado no campo numero
+    state.endereco.number = evento.target.value;
 
 }
 
@@ -91,7 +99,7 @@ async function handleBotaoSalvarClick(evento) {
     evento.preventDefault();
     //const resultado = await requisicaoServico.getJson('https://viacep.com.br/ws/90245000/json/');
     //console.log(resultado);
-    console.log(evento.target);
+    console.log(state.endereco);
 }
 
 async function handleInputCepChange(evento) {
@@ -116,12 +124,11 @@ async function handleInputCepChange(evento) {
         state.inputLogradouro.value = "";
         state.inputCidade.value = "";
         setErroFormulario("cep", "Cep inválido. Informe um cep correto!");
-        state.inputCep.focus();
-       
-    }
-    
-
+        state.inputCep.focus();       
+    }    
 }
+
+
 
 function setErroFormulario(chave, valor) {
     //verifica se o armento passado como chave é um cep ou um numero
