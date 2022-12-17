@@ -86,6 +86,9 @@ function limparFormulario() {
     setErroFormulario("cep", "");
     setErroFormulario("numero", "");
 
+     //além de limpar o formulário tem que limpar o objeto em memória endereco
+     state.endereco = new Endereco();
+
     //jogar o cursos para o campo cep
     state.inputCep.focus();
 
@@ -97,13 +100,29 @@ function handleBotaoLimparClick(evento) {
     limparFormulario();
 }
 
-async function handleBotaoSalvarClick(evento) {
+function handleBotaoSalvarClick(evento) {
     evento.preventDefault();
     //const resultado = await requisicaoServico.getJson('https://viacep.com.br/ws/90245000/json/');
     //console.log(resultado);
-    console.log(state.endereco);
-    controladorLista.adicionarCardnoHtml(state.endereco);
 
+    let erros = servicoEndereco.getErros(state.endereco);
+    // fazer um objeto array chamado chaves contendo o nome dos campos com erros
+    const chaves = Object.keys(erros);
+    //console.log(chaves);
+    // se houver erros não é para salvar os dados e limpar o formulario
+    if (chaves.length > 0) {
+        // usando forEach para percorrer o vetor
+        chaves.forEach(item => {
+            setErroFormulario(item, erros[item]);
+        })
+        //for (let i=0; i<chaves.length ; i++) {
+        //    setErroFormulario(chaves[i],erros[chaves[i]]);
+        //}
+    } else {
+        console.log(state.endereco);
+        controladorLista.adicionarCardnoHtml(state.endereco);
+        limparFormulario();    
+    }
 }
 
 async function handleInputCepChange(evento) {

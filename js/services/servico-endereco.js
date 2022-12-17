@@ -11,3 +11,17 @@ export async function buscaPorCep (cep) {
     let endereco = new Endereco (resultado.cep, resultado.logradouro, null, resultado.localidade);
     return endereco;
 }
+
+//função para validar um endereço.
+export function getErros(endereco) {
+    // instancia um vetor vazia a vai adicionando erros a ela. depois retorna esse vetor
+    const erros = {};
+    if (!endereco.cep || endereco.cep =="") {
+        erros.cep = "Campo obrigatório";
+    } 
+    if (!endereco.numero || endereco.numero == "") {
+        erros.numero = "Campo obrigatório";
+    }
+
+    return erros;
+}
