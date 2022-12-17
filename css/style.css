@@ -1,5 +1,5 @@
 @import 'modal.css';
-
+@import 'botoes.css';
 * {
     padding:0;
     margin:0;
@@ -91,29 +91,6 @@ html, body {
 .container-botao {
     display: flex;
     justify-content: space-between;
-}
-
-.botao {
-    height: 50px;
-    width: 250px;
-    border-radius: 5px;
-    border: 0;
-    background-color: green;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.botao:hover {
-    zoom: 1.15;
-}
-
-.botao-esqueda {
-    margin-right: 10px;
-}
-
-.botao-direita {
-    margin-left: 10px;
 }
 
 .card-item-lista {
