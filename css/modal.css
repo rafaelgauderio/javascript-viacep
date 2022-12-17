@@ -1,0 +1,42 @@
+
+.container-modal {
+    position: fixed;
+    top:0;
+    left:0;
+    padding: 10px;
+
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100vh;
+    z-index:1;
+
+    display: none;
+}
+
+.caixa-modal {
+    max-width: 500px;
+    width: 100%;
+    background-color: #555;
+    padding: 20px;
+    border: 8px solid green;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.conteudo-modal {
+    color:white;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+
+
+.container-modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
