@@ -11,6 +11,7 @@ function State() {
 
     this.botaoSalvar = null;
     this.botaoLimpar = null;
+    
 
     this.inputCep = null;
     this.inputLogradouro = null;
@@ -38,7 +39,7 @@ export function init() {
 
     //botoes
     state.botaoSalvar = document.forms.enderecoNovo.botaoSalvar;
-    state.botaoLimpar = document.forms.enderecoNovo.botaoLimpar;
+    state.botaoLimpar = document.forms.enderecoNovo.botaoLimpar;    
 
     //erros
     state.erroCep = document.querySelector('[data-erro="cep"]');
@@ -52,7 +53,7 @@ export function init() {
     state.inputNumero.addEventListener('keyup',handleInputNumeroKeyup);
     state.botaoLimpar.addEventListener('click', handleBotaoLimparClick);
     state.botaoSalvar.addEventListener('click', handleBotaoSalvarClick);
-    state.inputCep.addEventListener('change', handleInputCepChange);
+    state.inputCep.addEventListener('change', handleInputCepChange);   
 
     //requisicaoServico.getJson('https://viacep.com.br/ws/90245000/json/');
 
@@ -93,6 +94,7 @@ function limparFormulario() {
     state.inputCep.focus();
 
 }
+
 
 function handleBotaoLimparClick(evento) {
     // para evitar que o formulario seja enviado e chame outra pagina

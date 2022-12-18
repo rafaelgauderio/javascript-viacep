@@ -25,3 +25,10 @@
 .botao-direita {
     margin-left: 10px;
 }
+
+.botao-excluir-item {
+    height: 30px;
+    width: 100px;
+    margin-top: 10px;
+    cursor: pointer;    
+}
